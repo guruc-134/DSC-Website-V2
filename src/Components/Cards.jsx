@@ -18,7 +18,9 @@ const Cards = () => {
             <h2 className="text-primary text-center mb-3">Our Team</h2>
             <div class='cards-container'>
             {members.map(member=>
-            <CardUI src="/Images/Guru.jpg" title={member.name} position={member.position}
+            <CardUI src={`/Images/${member.regId}.jpg`}
+            title={member.name} 
+            position={member.position}
                     twitter={member.twitter}
                     github={member.github}
                     linkedin={member.linkedIn}
