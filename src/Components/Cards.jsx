@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import CardUI from "./CardUI";
-import { firestore } from '../Firebase/FirebaseConfig';
+import { firestore ,storage} from '../Firebase/FirebaseConfig';
 
 const Cards = () => {
     const [members,setMembers] = useState([])
@@ -17,8 +17,10 @@ const Cards = () => {
             <div className="container-team mt-5 pt-5 mb-4">
             <h2 className="text-primary text-center mb-3">Our Team</h2>
             <div class='cards-container'>
+
+                {console.log(members[0])} 
             {members.map(member=>
-            <CardUI src={`/Images/121910201026.png`} title={member.name} position={member.position}
+            <CardUI regId={member.regId} title={member.name} position={member.position}
                     twitter={member.twitter}
                     github={member.github}
                     linkedin={member.linkedIn}
